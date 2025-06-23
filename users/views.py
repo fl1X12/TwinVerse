@@ -5,6 +5,7 @@ from .serializers import FollowUserSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
+from django.core.exceptions import ObjectDoesNotExist
 
 class RegisterView(generics.CreateAPIView):
     queryset = CustomUser.objects.all()
@@ -24,6 +25,15 @@ class ProfileView(APIView):
 
 class FollowUserView(APIView):
     permission_classes = [IsAuthenticated]
+
+    def get(self,request):
+        try:
+            profile=request.user.profile
+            follows=profile.follows.all()
+            follow_list= [i.user.username for i in follows]
+            return Response(follow_list,status=200)
+        except ObjectDoesNotExist:
+            return Response({"error":"Profile not found"},404)
 
     def post(self, request):
         serializer = FollowUserSerializer(data=request.data)
