@@ -1,0 +1,52 @@
+# 1. Make sure you aour project directory
+cd c:\game\twinverse\TwinVerse
+# enter the command for activating a vitrual Environment
+venv\Scripts\activate
+# 2. Make migrations for any new or changed models
+python manage.py makemigrations
+
+# 3. Apply the migrations to update your database
+python manage.py migrate
+
+# 4. (Optional) Create a superuser if you want to access the Django admin
+python manage.py createsuperuser
+
+# 5. Start the Django development server
+python manage.py runserver
+
+
+
+API LINKS
+Authentication
+Token obtain:
+POST /api/token/
+Token refresh:
+POST /api/token/refresh/
+Users
+Register:
+POST /api/users/register/
+Profile (current user):
+GET /api/users/me/
+Follow/Unfollow user:
+POST /api/users/follow/
+Get following list:
+GET /api/users/follow/
+Twins
+Twin profile (get or update):
+GET /api/twin/profile/
+POST /api/twin/profile/
+Feed
+Public purchase feed:
+GET /api/feed/public-feed/
+Create purchase log:
+POST /api/feed/purchase/
+Leaderboard:
+GET /api/feed/leaderboard/
+Static celeb twins:
+GET /api/feed/celeb-twins/
+
+Example:
+
+http://127.0.0.1:8000/api/feed/leaderboard/
+http://127.0.0.1:8000/api/feed/celeb-twins/
+Let me know if you need details for any specific endpoint!
