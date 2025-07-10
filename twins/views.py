@@ -17,6 +17,15 @@ class TwinProfileView(APIView):
         except TwinProfile.DoesNotExist:
             return Response({"detail": "Profile not found."}, status=status.HTTP_404_NOT_FOUND)
 
+    def put(self, request):
+        profile = request.user.twin_profile
+        serializer = TwinProfileSerializer(profile, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        print("Validation errors:", serializer.errors)
+        return Response(serializer.errors, status=400)
+    
     def post(self, request):
         try:
             profile = request.user.twin_profile

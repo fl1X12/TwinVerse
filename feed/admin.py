@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import verse_post
+from .models import VersePost
 from .models import PurchaseLog
 
 # Register your models here.
-admin.site.register(verse_post)
+admin.site.register(VersePost)
 
 admin.site.register(PurchaseLog)

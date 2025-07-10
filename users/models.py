@@ -3,7 +3,6 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager
 from django.conf import settings
-from django.utils.text import slugify
 
 
 class CustomUserManager(BaseUserManager):
@@ -59,8 +58,7 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s profile"
 
-from django.db import models
-from django.conf import settings
+
 
 class Friendship(models.Model):
     from_user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='friendships_sent', on_delete=models.CASCADE)
