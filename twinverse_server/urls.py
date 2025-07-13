@@ -32,6 +32,7 @@ urlpatterns = [
     path('api/users/', include('users.urls')),
     path('api/twin/', include('twins.urls')),
     path('api/feed/', include('feed.urls')),
+    path('api/groups/', include('groups.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

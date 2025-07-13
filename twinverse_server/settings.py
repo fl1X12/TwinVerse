@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'feed',
     'rest_framework_simplejwt.token_blacklist', 
     'corsheaders',
+    'groups'
 ]
 
 MIDDLEWARE = [
