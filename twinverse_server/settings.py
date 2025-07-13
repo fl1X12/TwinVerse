@@ -85,9 +85,7 @@ TEMPLATES = [
     },
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "*",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 WSGI_APPLICATION = 'twinverse_server.wsgi.application'
 
