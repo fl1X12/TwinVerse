@@ -27,7 +27,11 @@ SECRET_KEY = 'django-insecure-hb0@ssp^=i!!hydk(zzg(u86_5tgnmdn=6mx*1wk#3w#v^)o_&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["mysite-uete.onrender.com","twinverseclient.vercel.app"]
+ALLOWED_HOSTS = ["mysite-uete.onrender.com"
+                 ,"twinverseclient-fl1x12s-projects.vercel.app"
+                 ,"twinverseclient.vercel.app"
+                 ,"twinverseclient-git-main-fl1x12s-projects.vercel.app"
+                 ,"twinverseclient-y0hauhw4p-fl1x12s-projects.vercel.app"]
 
 
 # Application definition
