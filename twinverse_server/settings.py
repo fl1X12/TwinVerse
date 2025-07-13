@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-hb0@ssp^=i!!hydk(zzg(u86_5tgnmdn=6mx*1wk#3w#v^)o_&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -86,7 +86,6 @@ TEMPLATES = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
-ALLOWED_HOSTS = ["*"]
 
 
 WSGI_APPLICATION = 'twinverse_server.wsgi.application'
