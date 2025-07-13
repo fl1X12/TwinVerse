@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
-
+from corsheaders.defaults import default_headers
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -87,6 +87,10 @@ TEMPLATES = [
 
 CORS_ALLOW_ALL_ORIGINS = False
 
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "Content-Type",
+    "Authorization",
+]
 
 WSGI_APPLICATION = 'twinverse_server.wsgi.application'
 
