@@ -61,9 +61,9 @@ DATABASES = {
 }
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -89,9 +89,14 @@ TEMPLATES = [
     },
 ]
 
-CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_HEADERS = list(default_headers) + [
+    "Content-Type",
+    "Authorization",
+]
+
+CORS_EXPOSE_HEADERS = [
     "Content-Type",
     "Authorization",
 ]
